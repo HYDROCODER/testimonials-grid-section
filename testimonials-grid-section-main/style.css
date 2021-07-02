@@ -55,7 +55,6 @@ img {
 figure {
   display: flex;
   align-items: center;
-  gap: 0.75rem;
 }
 
 /* Max width for mobile screens; Mobile-first approach */
@@ -111,9 +110,6 @@ p {
   body {
     display: grid;
     place-items: center;
-  }
-  figure {
-    gap: 0.2rem;
   }
   .full-screen-container {
     max-width: 1440px;
