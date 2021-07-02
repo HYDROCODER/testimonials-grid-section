@@ -1,0 +1,170 @@
+@import url("https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500;600&display=swap");
+/* Colors for the testimonials applied in the form of classes */
+:root {
+  --moderate-violet: hsl(263, 55%, 52%);
+  --vdgrayish-blue: hsl(217, 19%, 35%);
+  --vdblackish-blue: hsl(219, 29%, 14%);
+  --white: hsl(0, 0%, 100%);
+  --light-gray: hsl(0, 0%, 81%);
+  --light-grayish-blue: hsl(210, 46%, 95%);
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+/* Centering the entire content with grid */
+body {
+  min-height: 100vh;
+  font-family: "Barlow Semi Condensed", sans-serif;
+  font-size: 13px;
+  background: var(--light-grayish-blue);
+}
+/* text color classes for different texts in the testimonials */
+.txt-white100 {
+  color: var(--white);
+}
+.txt-white70 {
+  color: hsla(0, 0%, 100%, 0.7);
+}
+.txt-white50 {
+  color: hsla(0, 0%, 100%, 0.5);
+}
+.txt-black100 {
+  color: var(--vdblackish-blue);
+}
+.txt-black50 {
+  color: hsla(219, 29%, 14%, 0.5);
+}
+.txt-black70 {
+  color: hsla(219, 29%, 14%, 0.7);
+}
+/* Removing style for ul */
+ul {
+  list-style-type: none;
+  /* No need of margin0 and padding 0 as we will apply it using *{} */
+}
+/* image in the figure element */
+img {
+  border-radius: 50%;
+  transform: scale(0.75);
+  transform-origin: center left;
+  border: 4px solid hsla(263, 55%, 70%);
+}
+/* placing the items in the figure element */
+figure {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+/* Max width for mobile screens; Mobile-first approach */
+.full-screen-container {
+  max-width: 375px;
+  margin: 0 auto;
+}
+/* To give spacing around the testimonials as a whole */
+.testimonials {
+  padding: 1.5rem;
+}
+/* Padding inside and rounded borders for the testimonial */
+.testimonial {
+  padding: 1.5rem 1.75rem;
+  border-radius: 0.5rem;
+  box-shadow: 5px 20px 15px -5px var(--light-gray);
+}
+/* Gap b/w testimonials */
+.testimonial + .testimonial {
+  margin-top: 1rem;
+}
+/* gaps */
+article {
+  margin-top: 0.5rem;
+}
+/* background-colors and images */
+#t1 {
+  background-color: var(--moderate-violet);
+  background-image: url("./images/bg-pattern-quotation.svg");
+  background-repeat: no-repeat;
+  background-position: 90% 0;
+}
+#t2 {
+  background-color: var(--vdgrayish-blue);
+}
+#t3 {
+  background-color: var(--white);
+}
+#t4 {
+  background-color: var(--vdblackish-blue);
+}
+#t5 {
+  background-color: var(--white);
+}
+/* review paragraph */
+p {
+  margin-top: 1rem;
+  font-size: 0.7rem;
+  line-height: 1.5;
+}
+/* Media query for larger screen sizes */
+@media (min-width: 1440px) {
+  body {
+    display: grid;
+    place-items: center;
+  }
+  figure {
+    gap: 0.2rem;
+  }
+  .full-screen-container {
+    max-width: 1440px;
+  }
+  /* Grid system for the testimonials */
+  .testimonials {
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-areas: "t1 t1 t2 t5" "t3 t4 t4 t5";
+    gap: 1.5rem;
+    width: 70%;
+    margin: 0 auto;
+  }
+  /* Removing the extra gaps from mobile first approach */
+  .testimonial + .testimonial {
+    margin-top: 0rem;
+  }
+  #t1 {
+    grid-area: t1;
+  }
+  #t2 {
+    grid-area: t2;
+  }
+  #t3 {
+    grid-area: t3;
+  }
+  #t4 {
+    grid-area: t4;
+  }
+  #t5 {
+    grid-area: t5;
+  }
+}
+/* font-family: 'Barlow Semi Condensed', sans-serif;500 600 */
+/* ## Colors
+
+### Primary
+
+Moderate violet: hsl(263, 55%, 52%)
+Very dark grayish blue: hsl(217, 19%, 35%)
+Very dark blackish blue: hsl(219, 29%, 14%)
+White: hsl(0, 0%, 100%)
+
+### Neutral
+
+Light gray: hsl(0, 0%, 81%);
+Light grayish blue: hsl(210, 46%, 95%);
+
+Note for text colors:
+
+1. "Verified Graduate" has the same color as the person's name with 50% opacity
+2. Review paragraphs inside the quotations have the same color as well, but are at 70% opacity
+ */
